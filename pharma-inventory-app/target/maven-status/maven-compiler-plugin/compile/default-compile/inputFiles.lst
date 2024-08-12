@@ -1,0 +1,9 @@
+/home/haghob/Rami_project/pharma-inventory-app/src/main/java/com/example/pharmainventory/repository/StockRepository.java
+/home/haghob/Rami_project/pharma-inventory-app/src/main/java/com/example/pharmainventory/controller/StockController.java
+/home/haghob/Rami_project/pharma-inventory-app/src/main/java/com/example/pharmainventory/controller/ProduitController.java
+/home/haghob/Rami_project/pharma-inventory-app/src/main/java/com/example/pharmainventory/model/Produit.java
+/home/haghob/Rami_project/pharma-inventory-app/src/main/java/com/example/pharmainventory/model/Stock.java
+/home/haghob/Rami_project/pharma-inventory-app/src/main/java/com/example/pharmainventory/service/ProduitService.java
+/home/haghob/Rami_project/pharma-inventory-app/src/main/java/com/example/pharmainventory/PharmaInventoryApplication.java
+/home/haghob/Rami_project/pharma-inventory-app/src/main/java/com/example/pharmainventory/service/StockService.java
+/home/haghob/Rami_project/pharma-inventory-app/src/main/java/com/example/pharmainventory/repository/ProduitRepository.java

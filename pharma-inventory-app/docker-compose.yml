@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: pharma-inventory-app-db
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Rt@132217*!
+    ports:
+      - "1433:1433"
+    volumes:
+      - dbdata:/var/opt/mssql
+      - ./src/main/resources/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - pharma-network
+
+  app:
+    build: .
+    depends_on:
+      - db
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:sqlserver://db:1433;databaseName=pharma_db
+      - SPRING_DATASOURCE_USERNAME=sa
+      - SPRING_DATASOURCE_PASSWORD=Rt@132217*!
+    networks:
+      - pharma-network
+
+networks:
+  pharma-network:
+    driver: bridge
+
+volumes:
+  dbdata:

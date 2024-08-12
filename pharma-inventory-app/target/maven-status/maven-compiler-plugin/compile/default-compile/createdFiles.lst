@@ -1,0 +1,9 @@
+com/example/pharmainventory/controller/StockController.class
+com/example/pharmainventory/controller/ProduitController.class
+com/example/pharmainventory/PharmaInventoryApplication.class
+com/example/pharmainventory/model/Produit.class
+com/example/pharmainventory/repository/ProduitRepository.class
+com/example/pharmainventory/repository/StockRepository.class
+com/example/pharmainventory/model/Stock.class
+com/example/pharmainventory/service/ProduitService.class
+com/example/pharmainventory/service/StockService.class
