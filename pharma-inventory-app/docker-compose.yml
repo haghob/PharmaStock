@@ -6,6 +6,8 @@ services:
     environment:
       - ACCEPT_EULA=Y
       - SA_PASSWORD=Rt@132217*!
+      - MSSQL_PID=Developer
+      - TZ=UTC
     ports:
       - "1433:1433"
     volumes:
@@ -13,15 +15,23 @@ services:
       - ./src/main/resources/init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - pharma-network
+    healthcheck:
+      #test: /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "Rt@132217*!" -Q "SELECT 1" || exit 1
+      test: ["CMD-SHELL", "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 'Rt@132217*!' -Q 'SELECT 1' || exit 1"]
+      interval: 10s
+      retries: 10
+      start_period: 20s
+      timeout: 3s
 
   app:
     build: .
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     ports:
       - "8080:8080"
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:sqlserver://db:1433;databaseName=pharma_db
+      - SPRING_DATASOURCE_URL=jdbc:sqlserver://db:1433;databaseName=pharma_db;encrypt=false;trustServerCertificate=true
       - SPRING_DATASOURCE_USERNAME=sa
       - SPRING_DATASOURCE_PASSWORD=Rt@132217*!
     networks:
