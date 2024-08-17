@@ -1,15 +1,11 @@
-import './App.css';
+import React from 'react';
 import Inventory from './components/Inventory';
+import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Pharma Inventory</h1>
-      </header>
-      <main>
-        <Inventory />
-      </main>
+      <Inventory />
     </div>
   );
 }
