@@ -38,6 +38,8 @@ public class InventoryController {
         inventoryItem.setName(inventoryItemDetails.getName());
         inventoryItem.setQuantity(inventoryItemDetails.getQuantity());
         inventoryItem.setPrice(inventoryItemDetails.getPrice());
+        inventoryItem.setBatchNumber(inventoryItemDetails.getBatchNumber()); // Ajout du batchNumber
+        inventoryItem.setExpiryDate(inventoryItemDetails.getExpiryDate()); // Ajout de expiryDate
 
         final InventoryItem updatedInventoryItem = inventoryRepository.save(inventoryItem);
         return ResponseEntity.ok(updatedInventoryItem);

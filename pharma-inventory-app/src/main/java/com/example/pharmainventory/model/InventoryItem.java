@@ -1,5 +1,7 @@
 package com.example.pharmainventory.model;
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,6 +16,8 @@ public class InventoryItem {
     private String name;
     private int quantity;
     private double price;
+    private String batchNumber; // Ajout du numéro de lot
+    private LocalDate expiryDate; // Ajout de la date de péremption
 
     // Getters et setters
     public Long getId() {
@@ -46,5 +50,21 @@ public class InventoryItem {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getBatchNumber() {
+        return batchNumber;
+    }
+
+    public void setBatchNumber(String batchNumber) {
+        this.batchNumber = batchNumber;
+    }
+
+    public LocalDate getExpiryDate() {
+        return expiryDate;
+    }
+
+    public void setExpiryDate(LocalDate expiryDate) {
+        this.expiryDate = expiryDate;
     }
 }
