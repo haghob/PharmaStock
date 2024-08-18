@@ -6,8 +6,8 @@ const AddItem = ({ onAdd }) => {
   const [name, setName] = useState('');
   const [quantity, setQuantity] = useState('');
   const [price, setPrice] = useState('');
-  const [batchNumber, setBatchNumber] = useState(''); // Nouveau champ pour la traçabilité
-  const [expiryDate, setExpiryDate] = useState(''); // Nouveau champ pour la date de péremption
+  const [batchNumber, setBatchNumber] = useState(''); 
+  const [expiryDate, setExpiryDate] = useState(''); 
   const [message, setMessage] = useState('');
 
   const handleSubmit = (e) => {
@@ -16,8 +16,8 @@ const AddItem = ({ onAdd }) => {
       name, 
       quantity: parseInt(quantity), 
       price: parseFloat(price),
-      batchNumber, // Ajouter la traçabilité
-      expiryDate // Ajouter la date de péremption
+      batchNumber, 
+      expiryDate 
     };
     axios.post('http://localhost:8080/api/inventory', newItem)
       .then(response => {

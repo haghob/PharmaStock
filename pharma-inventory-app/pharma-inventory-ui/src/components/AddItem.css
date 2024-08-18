@@ -1,15 +1,16 @@
-.add-item-container {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-  }
-  
-  .add-item-container h2 {
-    margin-top: 0;
-    color: #2c3e50;
-  }
+.add-item-form button {
+  background-color: #00a0b0; /* Même couleur que la barre d'en-tête */
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-item-form button:hover {
+  background-color: #008c9e;
+}
   
   .add-item-form {
     display: flex;
